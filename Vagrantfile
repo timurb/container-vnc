@@ -6,9 +6,9 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'ubuntu/trusty64'
 
   config.vm.provision :shell, path: 'scripts/install-vnc.sh'
-  config.vm.provision :shell, path: 'scripts/vnc-user.sh'
+  config.vm.provision :shell, path: 'scripts/vnc-user.sh', args: 'vagrant'
 # Default password is 'password', change password like the following
-#  config.vm.provision :shell, path: 'scripts/vnc-user.sh PASSWORD'
+#  config.vm.provision :shell, path: 'scripts/vnc-user.sh', args: 'vagrant PASSWORD'
 
   config.vm.provision :shell, inline: '/etc/init.d/tvncserver start'
 

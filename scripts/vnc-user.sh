@@ -3,9 +3,9 @@
 ### "echo -e" works correctly only on bash
 
 # Change the defaults for VNC and its user as needed
-USER='vagrant'
+USER="${1:-vnc}"
 VNC_PASSWORD='/opt/TurboVNC/bin/vncpasswd'
-PASSWORD="${1:-password}" # pass commandline arg to override default
+PASSWORD="${2:-password}" # pass commandline arg to override default
 
 # VNC server doesn't start up without config
 cat >> /etc/sysconfig/tvncservers <<EOF
