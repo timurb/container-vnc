@@ -14,7 +14,8 @@ This is configured for `vagrant` user, for other users you have to `export DISPL
 
 ```
 docker build . -t container-vnc
-docker port $(docker run -dP container-vnc -- firefox)
+docker run -dP container-vnc -- firefox
+docker ps
 ```
 
 Connect via VNC client to localhost to port displayed by last command.
